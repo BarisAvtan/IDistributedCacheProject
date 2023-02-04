@@ -1,0 +1,17 @@
+﻿@model Dictionary<string,string>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<a asp-controller="ListType" asp-action="DeleteFirstItem">Listenin Başından Sil</a>
+
+<form method="post" asp-action="Add" enctype="application/x-www-form-urlencoded">
+    <input type="text" name="name" />
+    <input type="text" name="value" />
+    <button type="submit">Kaydet</button>
+</form>
+
+@foreach (var name in Model)
+{
+        <h2>@name.Key -> @name.Value <a asp-action="DeleteItem" asp-route-name="@name.Key">Sil</a></h2>
+}
