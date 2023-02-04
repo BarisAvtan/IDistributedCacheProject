@@ -11,6 +11,7 @@ namespace RedisExchangeApi.Web.Services
         private ConnectionMultiplexer _redis;//ConnectionMultiplexer clası üzerinden redis ile haberleşilir.
 
         public RedisService(IConfiguration configuration)
+        
         {
             _redisHost = configuration["Redis:Host"];
 
