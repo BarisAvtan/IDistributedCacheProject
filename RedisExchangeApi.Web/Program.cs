@@ -7,8 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 //REDIS ISLEMLERI
-var redisSevice = new RedisService(builder.Configuration);
-redisSevice.Connect();
+//var redisSevice = new RedisService(builder.Configuration);
+//redisSevice.Connect();
 builder.Services.AddSingleton<RedisService>();//Uygulama çalıştıgında tek nesne örneği alsın
 //REDIS
 

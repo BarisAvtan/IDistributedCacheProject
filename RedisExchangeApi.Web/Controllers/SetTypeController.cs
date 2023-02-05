@@ -34,12 +34,12 @@ namespace RedisExchangeApi.Web.Controllers
         [HttpPost]
         public IActionResult Add(string name)
         {
-            _redisService.Connect();
+       
             db = _redisService.GetDb(1);
 
             if (!db.KeyExists(listKey))
             {
-                db.KeyExpire(listKey, DateTime.Now.AddMinutes(5));
+                db.KeyExpire(listKey, DateTime.Now.AddSeconds(15));
             }
            
             db.SetAdd(listKey, name);
@@ -47,7 +47,7 @@ namespace RedisExchangeApi.Web.Controllers
         }
         public  async Task< IActionResult> DeleteItem(string name)
         {
-            _redisService.Connect();
+        
             db = _redisService.GetDb(1);
             db.SetRemoveAsync(listKey, name);
             return RedirectToAction("Index");

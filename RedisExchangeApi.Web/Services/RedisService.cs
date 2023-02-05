@@ -16,6 +16,9 @@ namespace RedisExchangeApi.Web.Services
             _redisHost = configuration["Redis:Host"];
 
             _redisPort = configuration["Redis:Port"];
+            
+            Connect();
+           
         }
 
         public void Connect()//uygulama ayağa kalktıgında bu connect metodu çagrılmalı yani program.cs 'e eklenmeli

@@ -20,7 +20,7 @@ namespace RedisExchangeApi.Web.Controllers
 
         public IActionResult Index()
         {
-            _redisService.Connect();
+           // _redisService.Connect();
             db = _redisService.GetDb(0);
             db.StringSet("name", "Baris BD");
             db.StringSet("name2", 100);
@@ -29,7 +29,7 @@ namespace RedisExchangeApi.Web.Controllers
 
         public IActionResult Show()
         {
-            _redisService.Connect();
+            //_redisService.Connect();
            
             db = _redisService.GetDb(0);
 
